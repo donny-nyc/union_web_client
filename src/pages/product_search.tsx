@@ -10,6 +10,11 @@ export default function ProductSearch() {
   };
 
   function setProductResults(event: React.ChangeEvent<HTMLInputElement>): void {
+    if(!event.target.value) {
+      setResults([]);
+      return;
+    }
+
     fetch(`http://localhost:8080/search?name=${event.target.value}`)
       .then((res) => res.json())
       .then((data) => {
