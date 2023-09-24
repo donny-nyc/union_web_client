@@ -1,0 +1,13 @@
+.ProductCard {
+  border: 0.5px solid #AAA;
+  background-color: #FFF;
+  width: 15vw;
+  height: 40vh;
+  border-radius: 5px;
+}
+
+.ProductCard .ProductImage {
+  height: 50%;
+  width: 100%;
+  background-color: #555;
+}
