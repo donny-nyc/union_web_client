@@ -58,7 +58,7 @@ export default function ProductCard(props: productCardProps) {
       count
     });
 
-    fetch(`http://localhost:8080/orders/add-to-order/${orderId}`, {
+    fetch(`http://localhost:8080/orders/${orderId}/add-to-order`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -67,6 +67,17 @@ export default function ProductCard(props: productCardProps) {
     }).then((res) => res.json())
     .then((data) => {
       console.log('add to order results', data);
+      
+      document.dispatchEvent(
+        new CustomEvent(
+          "addToOrder", 
+          { 
+            detail: {
+              orderId
+            }
+          }
+        )
+      );
     });
   }
 

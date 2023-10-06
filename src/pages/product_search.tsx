@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
+import OrderPreview from '../components/OrderPreview';
 import './product_search.css';
 
 export default function ProductSearch() {
@@ -36,6 +37,7 @@ export default function ProductSearch() {
 
   return (
     <>
+      <OrderPreview />
       <h2>Product Search</h2>
       <input type={'text'} onChange={setProductResults} />
       {results.length} results
